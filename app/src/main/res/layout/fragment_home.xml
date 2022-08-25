@@ -43,6 +43,18 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/clothePicture" />
+        <TextView
+            android:id="@+id/watermarkNameOfClothe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/_8ssp"
+            android:text="@string/watermarkNameOfClothe"
+            android:textColor="@color/lightGrey"
+            android:textDirection="rtl"
+            app:layout_constraintEnd_toEndOf="@+id/nameOfClothe"
+            app:layout_constraintStart_toStartOf="@+id/nameOfClothe"
+            app:layout_constraintTop_toBottomOf="@id/nameOfClothe" />
 
         <TextView
             android:id="@+id/codeOfClothe"
