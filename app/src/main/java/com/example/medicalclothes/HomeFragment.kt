@@ -22,14 +22,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentHomeBinding.bind(view)
         binding.apply {
-            clothePicture.loadImage(requireContext(),R.drawable.mc, isRoundedCorner = true)
-            picture1.loadImage(requireContext(),R.drawable.pic1, isRoundedCorner = true)
-            picture2.loadImage(requireContext(),R.drawable.pic2, isRoundedCorner = true)
-            picture3.loadImage(requireContext(),R.drawable.pic3, isRoundedCorner = true)
-            picture4.loadImage(requireContext(),R.drawable.pic4, isRoundedCorner = true)
-            picture5.loadImage(requireContext(),R.drawable.pic5, isRoundedCorner = true)
-            profile.loadImage(requireContext(),R.drawable.profile, isRoundedCorner = true)
-            ratingBar.rating= "5".toFloat()
+            clothePicture.loadImage(requireContext(), R.drawable.mc, isRoundedCorner = true)
+            picture1.loadImage(requireContext(), R.drawable.pic1, isRoundedCorner = true)
+            picture2.loadImage(requireContext(), R.drawable.pic2, isRoundedCorner = true)
+            picture3.loadImage(requireContext(), R.drawable.pic3, isRoundedCorner = true)
+            picture4.loadImage(requireContext(), R.drawable.pic4, isRoundedCorner = true)
+            picture5.loadImage(requireContext(), R.drawable.pic5, isRoundedCorner = true)
+            profile.loadImage(requireContext(), R.drawable.profile, isRoundedCorner = true)
+            ratingBar.rating = "5".toFloat()
         }
 
 
@@ -40,16 +40,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 //        binding.imageRecycler.adapter = null
         _binding = null
     }
+
     fun <T, F> ImageView.loadImage(
         receiver: T,
         data: F,
         placeholder: Int? = null,
         errorPicture: Int? = null,
-        isCircular: Boolean = false,
-        isCrossFade: Boolean = false,
         isRoundedCorner: Boolean = false,
         defaultRoundCorner: Int = 30,
-        defaultCrossFadeDuration: Int = 500
     ) {
         if (receiver !is Context && receiver !is View)
             return
@@ -58,8 +56,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             .apply {
                 if (placeholder != null) placeholder(placeholder)
                 if (errorPicture != null) error(errorPicture)
-                if (isCircular) circleCrop()
-                if (isCrossFade) transition(DrawableTransitionOptions.withCrossFade(defaultCrossFadeDuration))
                 if (isRoundedCorner) transform(RoundedCorners(defaultRoundCorner))
             }
             .into(this)
